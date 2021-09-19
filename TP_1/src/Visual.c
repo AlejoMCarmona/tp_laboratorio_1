@@ -17,7 +17,7 @@ int MostrarMenu(float x, float y, int flagX, int flagY) {
 	printf("4-Informar resultados\n");
 	printf("5- Salir\n");
 	printf("----------------------------------------\n");
-	opc = IngresarCaracter("Elija una opcion: ");
+	opc = IngresarEntero("Elija una opcion: ");
 	return opc;
 }
 

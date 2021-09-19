@@ -7,10 +7,9 @@ float IngresarFlotante(char mensaje[]) {
 	return numeroIngresado;
 }
 
-char IngresarCaracter(char mensaje[]) {
-	char caracter;
+int IngresarEntero(char mensaje[]) {
+	int numeroIngresado;
 	printf("%s", mensaje);
-	fflush(stdin);
-	scanf("%c", &caracter);
-	return caracter;
+	scanf("%d", &numeroIngresado);
+	return numeroIngresado;
 }

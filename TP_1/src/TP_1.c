@@ -26,7 +26,7 @@ int main(void) {
 	int factorialY;
 	int flagFactY;
 	int flagOp;
-	char opc;
+	int opc;
 	flagOp = 0;
 	flagY = 0;
 	flagX = 0;
@@ -36,21 +36,21 @@ int main(void) {
 		opc = MostrarMenu(x, y, flagX, flagY);
 		printf("----------------------------------------\n");
 		switch (opc) {
-			case '1':
+			case 1:
 				x = IngresarFlotante("Primer operando: ");
 				flagX = 1;
 			break;
-			case '2':
+			case 2:
 				y = IngresarFlotante("Segundo operando: ");
 				flagY = 1;
 			break;
-			case '3':
+			case 3:
 				RealizarOperaciones(x, y, flagX, flagY, &suma, &resta, &multiplicacion, &division, &flagDiv, &factorialX, &factorialY, &flagFactX, &flagFactY, &flagOp);
 			break;
-			case '4':
+			case 4:
 				MostrarResultados(x, y, &flagX, &flagY, suma, resta, multiplicacion, division, flagDiv, factorialX, factorialY, flagFactX, flagFactY, &flagOp);
 			break;
-			case '5':
+			case 5:
 				printf("¡Gracias por utilizar esta calculadora!\n");
 			break;
 			default:
@@ -58,7 +58,7 @@ int main(void) {
 			break;
 		}
 		printf("----------------------------------------\n");
-	} while (opc != '5');
+	} while (opc != 5);
 
 	return EXIT_SUCCESS;
 }

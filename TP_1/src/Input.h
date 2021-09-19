@@ -8,10 +8,10 @@
 /// \return El numero ingresado
 float IngresarFlotante(char mensaje[]);
 
-/// \fn char IngresarCaracter(char[])
-/// \brief Pide ingresar un caracter y lo devuelve
-/// \param mensaje El mensaje que se le va a mostrar al usuario al pedir el caracter
-/// \return El caracter ingresado
-char IngresarCaracter(char mensaje[]);
+/// \fn int IngresarEntero(char[])
+/// \brief Pide un entero y lo retorna
+/// \param mensaje El mensaje que se va a mostrar al pedir el numero entero
+/// \return El entero ingresado
+int IngresarEntero(char mensaje[]);
 
 #endif /* INPUT_H_ */
