@@ -29,7 +29,7 @@ void MostrarResultados(float x, float y, int* flagX, int* flagY, float suma, flo
 		if (flagDiv) {
 			printf("El resultado de %.2f / %.2f es: %.2f\n", x, y, division);
 		} else {
-			printf("No se puede realizar una division por cero.\n");
+			printf("No es posible dividir por cero.\n");
 		}
 		printf("El resultado de %.2f * %.2f es: %.2f\n", x, y, multiplicacion);
 		if (flagFactX) {
