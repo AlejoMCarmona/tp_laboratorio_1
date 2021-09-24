@@ -24,10 +24,11 @@ float Restar(float x, float y);
 /// \return El resultado de la multiplicacion
 float Multiplicar(float x, float y);
 
-/// \fn int Dividir(int, int)
-/// \brief Intenta dividir numeros y devuelve si se pudo hacer la division o no
+/// \fn int Dividir(float, float, float*)
+/// \brief Intenta dividir dos numeros y devuelve si se pudo hacer la division o no
 /// \param x Primer numero a dividir
 /// \param y Segundo numero a dividir
+/// \param division El resultado de la division de los numeros
 /// \return 1 si se pudo dividir y 0 si no se pudo dividir
 int Dividir(float x, float y, float* division);
 
@@ -37,23 +38,5 @@ int Dividir(float x, float y, float* division);
 /// \param factorial El resultado del factorial
 /// \return 1 si se pudo realizar el factorial y 0 si no se pudo
 int CalcularFactorial(float num, int *factorial);
-
-/// \fn void RealizarOperaciones(float, float, int, int, float*, float*, float*, float*, int*, int*, int*, int*, int*, int*)
-/// \brief Realiza todas las operaciones de la calculadora
-/// \param x Primer operando
-/// \param y Segundo operando
-/// \param flagX Indica con un 1 si se ingreso el primer operando y con un 0 si aun no se hizo
-/// \param flagY Indica con un 1 si se ingreso el segundo operando y con un 0 si aun no se hizo
-/// \param suma Suma de los numeros
-/// \param resta Resta de los numeros
-/// \param multiplicacion Multiplicacion de los numeros
-/// \param division Division de los numeros
-/// \param flagDiv Indica con un 1 si se puede realizar la division de los numeros y con un 0 si no se puede
-/// \param factorialX Factorial del primer operando
-/// \param factorialY Factorial del segundo operando
-/// \param flagFactX Indica con un 1 si se puede realizar el factorial del primer operando y con un 0 si no se puede
-/// \param flagFactY Indica con un 1 si se puede realizar el factorial del segundo operando y con un 0 si no se puede
-/// \param flagOp Indica con un 1 si se pueden realizar las operaciones y con un 0 si no se puede
-void RealizarOperaciones(float x, float y, int flagX, int flagY, float* suma, float* resta, float* multiplicacion, float* division, int* flagDiv, int* factorialX, int* factorialY, int* flagFactX, int* flagFactY, int* flagOp);
 
 #endif /* OPERACIONES_H_ */

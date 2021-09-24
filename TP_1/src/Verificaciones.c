@@ -13,13 +13,13 @@ int VerificarSigno(int num) {
 	return resultado;
 }
 
-int VerificarFactorial(float num){
-	int resultado;
+int ValidarFactorial(float num){
+	int retorno;
 	int auxNum;
-	resultado = 1,
+	retorno = 1,
 	auxNum = num; //casteo implicito de flotante a entero.
 	if (VerificarSigno(num) == -1 || auxNum - num != 0 || num > 12) {
-		resultado = 0;
+		retorno = 0;
 	}
-	return resultado;
+	return retorno;
 }
