@@ -41,12 +41,12 @@ int main(void) {
 		if (flagX == FALSE) {
 			printf("1. Ingresar 1er operando (A = x)\n");
 		} else {
-			printf("1. Ingresar 1er operando (A = %.2f)\n", x);
+			printf("1. Ingresar 1er operando (A = %f)\n", x);
 		}
 		if (flagY == FALSE) {
 			printf("2. Ingresar 2do operando (B = y)\n");
 		} else {
-			printf("2. Ingresar 2do operando (B = %.2f)\n", y);
+			printf("2. Ingresar 2do operando (B = %f)\n", y);
 		}
 		printf("3. Calcular todas las operaciones\n");
 		printf("4. Informar resultados\n");
@@ -81,21 +81,21 @@ int main(void) {
 			case 4:
 				if (flagCalculos == TRUE) {
 					printf("////////////////////RESULTADOS////////////////////\n");
-					printf("El resultado de %.2f + %.2f es: %.2f\n", x, y, suma);
-					printf("El resultado de %.2f - %.2f es: %.2f\n", x, y, resta);
+					printf("El resultado de %f + %f es: %f\n", x, y, suma);
+					printf("El resultado de %f - %f es: %f\n", x, y, resta);
 					if (flagDiv == TRUE) {
-						printf("El resultado de %.2f / %.2f es: %f\n", x, y, division);
+						printf("El resultado de %f / %f es: %f\n", x, y, division);
 					} else {
 						printf("No es posible dividir por cero.\n");
 					}
-					printf("El resultado de %.2f * %.2f es: %.2f\n", x, y, multiplicacion);
+					printf("El resultado de %f * %f es: %f\n", x, y, multiplicacion);
 					if (flagFactorialX == TRUE) {
-						printf("El factorial de %.2f es: %d\n", x, factorialX);
+						printf("El factorial de %f es: %d\n", x, factorialX);
 					} else {
 						printf("¡ERROR! No es posible en esta calculadora hallar el factorial de numeros muy grandes, ni de numeros decimales, ni tampoco de negativos.\n");
 					}
 					if (flagFactorialY == TRUE) {
-						printf("El factorial de %.2f es: %d\n", y, factorialY);
+						printf("El factorial de %f es: %d\n", y, factorialY);
 					} else {
 						printf("¡ERROR! No es posible en esta calculadora hallar el factorial de numeros muy grandes, ni de numeros decimales, ni tampoco de negativos.\n");
 					}
