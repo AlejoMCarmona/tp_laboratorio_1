@@ -1,6 +1,5 @@
 #ifndef VERIFICACIONES_H_
 #define VERIFICACIONES_H_
-#include <float.h>
 
 /// \fn int VerificarSigno(int)
 /// \brief Verifica el signo de un numero
