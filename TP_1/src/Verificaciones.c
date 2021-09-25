@@ -17,7 +17,7 @@ int ValidarFactorial(float num){
 	int retorno;
 	int auxNum;
 	retorno = 1,
-	auxNum = num; //casteo implicito de flotante a entero.
+	auxNum = num;
 	if (VerificarSigno(num) == -1 || auxNum - num != 0 || num > 12) {
 		retorno = 0;
 	}

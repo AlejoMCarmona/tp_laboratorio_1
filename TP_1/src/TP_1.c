@@ -64,10 +64,12 @@ int main(void) {
 			case 1:
 				x = IngresarFlotante("Ingrese el primer operando: ");
 				flagX = TRUE;
+				flagCalculos = FALSE;
 			break;
 			case 2:
 				y = IngresarFlotante("Ingrese el segundo operando: ");
 				flagY = TRUE;
+				flagCalculos = FALSE;
 			break;
 			case 3:
 				if (flagX == TRUE && flagY == TRUE) {
