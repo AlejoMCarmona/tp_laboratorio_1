@@ -8,14 +8,14 @@
 /// \fn int myGets(char*, int)
 /// \brief Lee de stdin hasta que encuentra un '\n' o hasta que haya copiado en cadena
 /// un máximo de 'longitud - 1' caracteres.
-/// \param cadena Puntero al espacio de memoria donde se copiara la cadena obtenida
+/// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
 /// \param longitud Define el tamaño de cadena
 /// \return Retorna 1 (EXITO) si se obtiene una cadena y 0 (ERROR) si no
 int myGets(char *cadena, int longitud);
 
 /// \fn int IngresarEntero(int*, char[])
 /// \brief Solicita un numero entero al usuario y verifica que lo sea, si lo es devuelve el resultado
-/// \param numero Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param numero Puntero a un entero donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \return Retorna 1 si se obtuvo el numero y 0 si no
 int IngresarEntero(int* numero, char mensaje[]);
@@ -23,7 +23,7 @@ int IngresarEntero(int* numero, char mensaje[]);
 /// \fn int IngresarEnteroConIntentos(int*, char[], char[], int)
 /// \brief Solicita un numero entero al usuario y verifica que lo sea, si lo es devuelve el resultado. El usuario tiene
 /// intentos para ingresar bien el numero.
-/// \param numero Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param numero Puntero a un entero donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa un dato incorrecto
 /// \param intentos Cantidad de intentos que posee el usuario para intentar ingresar el numero entero
@@ -33,7 +33,7 @@ int IngresarEnteroConIntentos(int* numero, char mensaje[], char mensajeError[], 
 /// \fn int IngresarEnteroEntreRangosConIntentos(int*, char[], char[], int, int, int)
 /// \brief Solicita un numero entero al usuario y verifica que lo sea y que se encuentre entre dos rangos, si es valido devuelve
 /// el numero. El usuario tiene intentos para ingresar bien el numero.
-/// \param numero Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param numero Puntero a un entero donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa un dato incorrecto
 /// \param minimo Es el numero maximo a ser aceptado
@@ -44,7 +44,7 @@ int IngresarEnteroEntreRangosConIntentos(int* numero, char mensaje[], char mensa
 
 /// \fn int getInt(int*)
 /// \brief Verifica si la cadena ingresada es un entero
-/// \param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param pResultado Puntero a entero donde se dejara el resultado de la funcion
 /// \return Retorna 1 (EXITO) si se obtiene un numero entero y 0 (ERROR) si no
 int getInt(int *pResultado);
 
@@ -56,7 +56,7 @@ int ValidarEntero(char* cadena);
 
 /// \fn int IngresarFlotante(float*, char[])
 /// \brief Solicita un numero flotante al usuario y verifica que lo sea, si lo es devuelve el resultado
-/// \param numero Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param numero Puntero a flotante donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \return Retorna 1 si se obtuvo el numero y 0 si no
 int IngresarFlotante(float* numero, char mensaje[]);
@@ -64,7 +64,7 @@ int IngresarFlotante(float* numero, char mensaje[]);
 /// \fn int IngresarFlotanteConIntentos(float*, char[], char[], int)
 /// \brief Solicita un numero flotante al usuario y verifica que lo sea, si lo es devuelve el resultado. El usuario tiene
 /// intentos para ingresar bien el numero.
-/// \param numero Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param numero Puntero a un flotante donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa un dato incorrecto
 /// \param intentos Cantidad de intentos que posee el usuario para intentar ingresar el numero flotante
@@ -74,7 +74,7 @@ int IngresarFlotanteConIntentos(float* numero, char mensaje[], char mensajeError
 /// \fn int IngresarFlotanteEntreRangosConIntentos(float*, char[], char[], float, float, int)
 /// \brief Solicita un numero flotante al usuario y verifica que lo sea y que se encuentre entre dos rangos, si es valido devuelve
 /// el numero. El usuario tiene intentos para ingresar bien el numero.
-/// \param numero Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param numero Puntero a un flotante donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa un dato incorrecto
 /// \param minimo Es el numero maximo a ser aceptado
@@ -85,7 +85,7 @@ int IngresarFlotanteEntreRangosConIntentos(float* numero, char mensaje[], char m
 
 /// \fn int getFloat(float*)
 /// \brief Verifica si la cadena ingresada es un flotante
-/// \param pResultado Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param pResultado Puntero a flotante donde se dejara el resultado de la funcion
 /// \return Retorna 1 (EXITO) si se obtiene un numero flotante y 0 (ERROR) si no
 int getFloat(float *pResultado);
 
@@ -97,7 +97,8 @@ int ValidarFlotante(char* cadena);
 
 /// \fn int IngresarCadena(char[], int, char[])
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia, si no lo está devuelve el resultado
-/// \param cadena Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
+/// \param tam Tamanio de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \return Retorna 1 si se obtuvo la cadena y 0 si no
 int IngresarCadena(char cadena[], int tam, char mensaje[]);
@@ -105,7 +106,7 @@ int IngresarCadena(char cadena[], int tam, char mensaje[]);
 /// \fn int IngresarCadenaConIntentos(char[], int, char[], char[], int)
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia, si no lo está devuelve el resultado. El usuario tiene
 /// intentos para ingresarla correctamente.
-/// \param cadena Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
 /// \param tam Tamanio de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa una cadena vacía
@@ -122,7 +123,7 @@ int ValidarCadena(char cadena[]);
 /// \fn int IngresarCadenaSoloLetras(char[], int, char[])
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia y que solo esté conformada por letras, si no lo está
 /// devuelve el resultado
-/// \param cadena Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
 /// \param tam Tamanio de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \return Retorna 1 si la cadena no está vacía y está conformada solo por letras, y 0 si no lo está
@@ -131,7 +132,7 @@ int IngresarCadenaSoloLetras(char cadena[], int tam, char mensaje[]);
 /// \fn int IngresarCadenaSoloLetrasConIntentos(char[], int, char[], char[], int)
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia y que solo esté conformada por letras, si no lo está
 /// devuelve el resultado
-/// \param cadena Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
 /// \param tam Tamanio de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa una cadena inválida
@@ -148,7 +149,7 @@ int ValidarCadenaSoloLetras(char cadena[]);
 /// \fn int IngresarCadenaSoloAlfanumericosConIntentos(char[], int, char[], char[], int)
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia y que solo esté conformada por caracteres alfanuméricos,
 /// si no lo está devuelve el resultado
-/// \param cadena Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
 /// \param tam Tamanio de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa una cadena inválida
@@ -162,16 +163,16 @@ int IngresarCadenaSoloAlfanumericosConIntentos(char cadena[], int tam, char mens
 /// \return Retorna 1 si la cadena es válida y 0 si no lo es
 int ValidarCadenaSoloAlfanumericos(char cadena[]);
 
-/// \fn int IngresarCaracter(char*, char[], char[])
+/// \fn int IngresarCaracter(char*, char[])
 /// \brief Solicita un caracter al usuario
-/// \param caracter Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param caracter Puntero a un caracter donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \return Retorna 1 si se obtuvo el caracter y 0 si no
 int IngresarCaracter(char* caracter, char mensaje[]);
 
 /// \fn int IngresarCaracterEntreRangos(char*, char[], char[], char, char)
 /// \brief Solicita un caracter al usuario entre un rango
-/// \param caracter Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param caracter Puntero a un caracter donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa un caracter fuera del rango
 /// \param minimo Es el caracter maximo a ser aceptado
@@ -181,7 +182,7 @@ int IngresarCaracterEntreRangos(char* caracter, char mensaje[], char mensajeErro
 
 /// \fn int IngresarCaracterEntreRangosConIntentos(char*, char[], char[], char, char, int)
 /// \brief Solicita un caracter al usuario entre un rango. El usuario posee intentos para poder ingresarlo correctamente
-/// \param caracter Puntero al espacio de memoria donde se dejara el resultado de la funcion
+/// \param caracter Puntero a un caracter donde se dejara el resultado de la funcion
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa un caracter fuera del rango
 /// \param minimo Es el caracter maximo a ser aceptado
