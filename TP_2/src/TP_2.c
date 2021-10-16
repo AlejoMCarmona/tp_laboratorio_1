@@ -9,7 +9,7 @@
  */
 
 #include "Menu.h"
-#define T 10
+#define T 1000
 
 int main(void) {
 	setbuf(stdout, NULL);
