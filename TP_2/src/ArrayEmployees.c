@@ -31,7 +31,7 @@ int HacerAlta(Employee list[], int len, int* contadorID) {
 	int id;
 	Employee nuevoEmpleado;
 	id = *contadorID;
-	retorno = -1;
+	retorno = 0;
 
 	if (list != NULL && len > 0 && contadorID != NULL) {
 		retorno = CrearEmpleado(&nuevoEmpleado, id);
@@ -49,15 +49,15 @@ int HacerAlta(Employee list[], int len, int* contadorID) {
 
 int CrearEmpleado(Employee* employee, int id) {
 	int retorno;
-	retorno = -1;
+	retorno = 0;
 	if (employee != NULL) {
-		retorno = IngresarCadenaSoloLetrasConIntentos(employee->name, 51, "Ingrese el nombre del empleado ", "ERROR. Reingrese el nombre del empleado ", 5);
+		retorno = IngresarCadenaSoloLetrasConIntentos(employee->name, 51, "Ingrese el nombre del empleado: ", "ERROR. Reingrese el nombre del empleado: ", 5);
 		if (retorno == 1) {
-			retorno = IngresarCadenaSoloLetrasConIntentos(employee->lastName, 51, "Ingrese el apellido del empleado ", "ERROR. Reingrese el apellido del empleado ", 5);
+			retorno = IngresarCadenaSoloLetrasConIntentos(employee->lastName, 51, "Ingrese el apellido del empleado: ", "ERROR. Reingrese el apellido del empleado: ", 5);
 			if (retorno == 1) {
-				retorno = IngresarFlotanteEntreRangosConIntentos(&(employee->salary), "Ingrese el salario del empleado ", "ERROR. Reingrese el salario del empleado ", 1, FLT_MAX, 5);
+				retorno = IngresarFlotanteEntreRangosConIntentos(&(employee->salary), "Ingrese el salario del empleado: ", "ERROR. Reingrese el salario del empleado: ", 1, FLT_MAX, 5);
 				if (retorno == 1) {
-					retorno = IngresarEnteroEntreRangosConIntentos(&(employee->sector), "Ingrese el sector del empleado (1-10) ", "ERROR. Reingrese el sector del empleado (1-10) ", 1, 10, 5);
+					retorno = IngresarEnteroEntreRangosConIntentos(&(employee->sector), "Ingrese el sector del empleado (1-10): ", "ERROR. Reingrese el sector del empleado (1-10): ", 1, 10, 5);
 					if (retorno == 1) {
 						employee->id = id + 1;
 					}
@@ -94,7 +94,7 @@ int HacerModificacion(Employee list[], int len) {
 	int indice;
 	int id;
 	int opcion;
-	retorno = -1;
+	retorno = 0;
 
 	if (list != NULL && len > 0) {
 		ContarEmpleados(list, len, &retorno);
@@ -282,21 +282,21 @@ int OrdenarEmpleadosPorApellidoSector(Employee list[], int len) {
 }
 
 int SortEmployees(Employee list[], int len, int order) {
-	int retornoOrdenamiento;
-	retornoOrdenamiento = -1;
+	int retorno;
+	retorno = -1;
 	if (list != NULL && len > 0) {
 		if (order == 1) {
-			retornoOrdenamiento = SortEmployeesUp(list, len);
+			retorno = SortEmployeesAscendingOrder(list, len);
 		} else {
 			if (order == 0) {
-				retornoOrdenamiento = SortEmployeesDown(list, len);
+				retorno = SortEmployeesDescendingOrder(list, len);
 			}
 		}
 	}
-	return retornoOrdenamiento;
+	return retorno;
 }
 
-int SortEmployeesUp(Employee list[], int len) {
+int SortEmployeesAscendingOrder(Employee list[], int len) {
 	int retorno;
 	Employee employeeAux;
 	retorno = -1;
@@ -322,7 +322,7 @@ int SortEmployeesUp(Employee list[], int len) {
 	return retorno;
 }
 
-int SortEmployeesDown(Employee list[], int len) {
+int SortEmployeesDescendingOrder(Employee list[], int len) {
 	int retorno;
 	Employee employeeAux;
 	retorno = -1;
@@ -368,7 +368,7 @@ int AcumularSalario(Employee list[], int len, float* salarioAcumulado) {
 	float salarioAux;
 	retorno = 0;
 	salarioAux = 0;
-	if (list != NULL && len > 0) {
+	if (list != NULL && len > 0 && salarioAcumulado != NULL) {
 		for (int i = 0; i < len; i++) {
 			if (list[i].isEmpty == FULL) {
 				salarioAux += list[i].salary;
@@ -403,7 +403,7 @@ int ImprimirDatosSalariales(Employee list[], int len) {
 	int cantEmpleadosSuperanSalarioPromedio;
 	float salarioAcumulado;
 	float salarioPromedio;
-	retorno = -1;
+	retorno = 0;
 
 	if (list != NULL && len > 0) {
 		retorno = CalcularSalariosEmpleados(list, len, &salarioAcumulado, &salarioPromedio);

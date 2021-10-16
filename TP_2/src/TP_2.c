@@ -9,7 +9,7 @@
  */
 
 #include "Menu.h"
-#define T 1000
+#define T 10
 
 int main(void) {
 	setbuf(stdout, NULL);
@@ -31,7 +31,11 @@ int main(void) {
 					if (retornoFuncion == 1) {
 						printf("Alta realizada con éxito.\n");
 					} else {
-						printf("¡¡ERROR!! No se pudo realizar el alta.\n");
+						if (retornoFuncion == -1) {
+							printf("¡¡ERROR!! No hay espacio disponible en la nómina de clientes.\n");
+						} else {
+							printf("¡¡ERROR!! No se pudo realizar el alta.\n");
+						}
 					}
 				break;
 				case 2:
@@ -71,8 +75,12 @@ int main(void) {
 					if (retornoFuncion == 1) {
 						if (opcionSub == 1) {
 							retornoFuncion = OrdenarEmpleadosPorApellidoSector(listaEmpleados, T);
-							if (retornoFuncion != 1) {
+							if (retornoFuncion == -1) {
 								printf("¡¡ERROR!! El ordenamiento no pudo realizarse con éxito.\n");
+							} else {
+								if (retornoFuncion == 0) {
+									printf("¡¡ERROR!! No se pudo elegir una opción adecuada.\n");
+								}
 							}
 						} else {
 							if (opcionSub == 2) {
@@ -90,7 +98,6 @@ int main(void) {
 						} else {
 							printf("¡¡ERROR!! Hubo un error en la selección de la opción.\n");
 						}
-
 					}
 				break;
 				case 0:

@@ -26,7 +26,7 @@ int MostrarSubmenu(Employee list[], int len, int* opcion) {
 		if (retorno > 0) {
 			printf( "1. Listado de los empleados ordenados alfabeticamente por apellido y sector.\n"
 					"2. Total y promedio de los salarios, junto con la cantidad de empleados que superan el salario promedio.\n\n");
-			retorno = IngresarEntero(opcion, "Elija una opcion: ");
+			retorno = IngresarEnteroEntreRangosConIntentos(opcion, "Elija una opcion: ", "ERROR. Elija una opción válida: ", 1, 2, 5);
 		} else {
 			retorno = -2;
 		}

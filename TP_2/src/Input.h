@@ -98,7 +98,7 @@ int ValidarFlotante(char* cadena);
 /// \fn int IngresarCadena(char[], int, char[])
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia, si no lo está devuelve el resultado
 /// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
-/// \param tam Tamanio de la cadena
+/// \param tam Tamaño de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \return Retorna 1 si se obtuvo la cadena y 0 si no
 int IngresarCadena(char cadena[], int tam, char mensaje[]);
@@ -107,7 +107,7 @@ int IngresarCadena(char cadena[], int tam, char mensaje[]);
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia, si no lo está devuelve el resultado. El usuario tiene
 /// intentos para ingresarla correctamente.
 /// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
-/// \param tam Tamanio de la cadena
+/// \param tam Tamaño de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa una cadena vacía
 /// \param intentos Cantidad de intentos que posee el usuario para ingresar una cadena válida
@@ -124,7 +124,7 @@ int ValidarCadena(char cadena[]);
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia y que solo esté conformada por letras, si no lo está
 /// devuelve el resultado
 /// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
-/// \param tam Tamanio de la cadena
+/// \param tam Tamaño de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \return Retorna 1 si la cadena no está vacía y está conformada solo por letras, y 0 si no lo está
 int IngresarCadenaSoloLetras(char cadena[], int tam, char mensaje[]);
@@ -133,7 +133,7 @@ int IngresarCadenaSoloLetras(char cadena[], int tam, char mensaje[]);
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia y que solo esté conformada por letras, si no lo está
 /// devuelve el resultado
 /// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
-/// \param tam Tamanio de la cadena
+/// \param tam Tamaño de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa una cadena inválida
 /// \param intentos Cantidad de intentos que posee el usuario para ingresar una cadena válida
@@ -150,7 +150,7 @@ int ValidarCadenaSoloLetras(char cadena[]);
 /// \brief Solicita una cadena al usuario y verifica que no esté vacia y que solo esté conformada por caracteres alfanuméricos,
 /// si no lo está devuelve el resultado
 /// \param cadena Puntero a una cadena donde se dejara el resultado de la funcion
-/// \param tam Tamanio de la cadena
+/// \param tam Tamaño de la cadena
 /// \param mensaje Es el mensaje a ser mostrado
 /// \param mensajeError Es el mensaje a ser mostrado si el usuario ingresa una cadena inválida
 /// \param intentos Cantidad de intentos que posee el usuario para ingresar una cadena válida
