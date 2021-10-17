@@ -100,12 +100,12 @@ int HacerModificacion(Employee list[], int len) {
 		ContarEmpleados(list, len, &retorno);
 		if (retorno > 0) {
 			PrintEmployees(list, len);
-			retorno = IngresarEnteroConIntentos(&id, "Ingrese el ID del empleado a modificar ", "ERROR. Reingrese el ID del empleado a modificar ", 5);
+			retorno = IngresarEnteroConIntentos(&id, "Ingrese el ID del empleado a modificar: ", "ERROR. Reingrese el ID del empleado a modificar: ", 5);
 			if (retorno == 1) {
 				indice = FindEmployeeById(list, len, id);
 				if (indice != -1) {
 					MostrarCamposEmpleadoParaModificar(list[indice]);
-					retorno = IngresarEnteroEntreRangosConIntentos(&opcion, "Elija una opción ", "¡¡ERROR!! Elija una opcion válida: ", 1, 4, 5);
+					retorno = IngresarEnteroEntreRangosConIntentos(&opcion, "Elija una opción: ", "¡¡ERROR!! Elija una opcion válida: ", 1, 4, 5);
 					if (retorno == 1) {
 						retorno = ModificarEmpleado(list, len, indice, opcion);
 					}
@@ -130,25 +130,25 @@ int ModificarEmpleado(Employee list[], int len, int indice, int opcion) {
 	if (list != NULL && len > 0 && indice >= 0 && indice < len) {
 		switch(opcion) {
 			case 1:
-				retorno = IngresarCadenaSoloLetrasConIntentos(auxiliarCadena, 51, "Ingrese el nombre del empleado ", "ERROR. Reingrese el nombre del empleado ", 5);
+				retorno = IngresarCadenaSoloLetrasConIntentos(auxiliarCadena, 51, "Ingrese el nombre del empleado: ", "ERROR. Reingrese el nombre del empleado: ", 5);
 				if (retorno == 1) {
 					strncpy(list[indice].name, auxiliarCadena, 51);
 				}
 			break;
 			case 2:
-				retorno = IngresarCadenaSoloLetrasConIntentos(auxiliarCadena, 51, "Ingrese el apellido del empleado ", "ERROR. Reingrese el apellido del empleado ", 5);
+				retorno = IngresarCadenaSoloLetrasConIntentos(auxiliarCadena, 51, "Ingrese el apellido del empleado: ", "ERROR. Reingrese el apellido del empleado: ", 5);
 				if (retorno == 1) {
 					strncpy(list[indice].lastName, auxiliarCadena, 51);
 				}
 			break;
 			case 3:
-				retorno = IngresarFlotanteEntreRangosConIntentos(&auxiliarFlotante, "Ingrese el salario del empleado ", "ERROR. Reingrese el salario del empleado ", 1, FLT_MAX, 5);
+				retorno = IngresarFlotanteEntreRangosConIntentos(&auxiliarFlotante, "Ingrese el salario del empleado: ", "ERROR. Reingrese el salario del empleado: ", 1, FLT_MAX, 5);
 				if (retorno == 1) {
 					list[indice].salary = auxiliarFlotante;
 				}
 			break;
 			case 4:
-				retorno = IngresarEnteroEntreRangosConIntentos(&auxiliarEntero, "Ingrese el sector del empleado (1-10) ", "ERROR. Reingrese el sector del empleado (1-10) ", 1, 10, 5);
+				retorno = IngresarEnteroEntreRangosConIntentos(&auxiliarEntero, "Ingrese el sector del empleado (1-10): ", "ERROR. Reingrese el sector del empleado (1-10): ", 1, 10, 5);
 				if (retorno == 1) {
 					list[indice].sector = auxiliarEntero;
 				}
@@ -179,7 +179,7 @@ int HacerBaja(Employee list[], int len) {
 		ContarEmpleados(list, len, &retorno);
 		if (retorno > 0) {
 			PrintEmployees(list, len);
-			retorno = IngresarEnteroConIntentos(&id, "Ingrese el ID del empleado a eliminar ", "ERROR. Reingrese el ID del empleado a eliminar ", 5);
+			retorno = IngresarEnteroConIntentos(&id, "Ingrese el ID del empleado a eliminar: ", "ERROR. Reingrese el ID del empleado a eliminar: ", 5);
 			if (retorno == 1) {
 				retorno = RemoveEmployee(list, len, id);
 				if (retorno == 0) {

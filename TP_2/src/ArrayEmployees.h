@@ -26,7 +26,7 @@ int InitEmployees (Employee list[], int len);
 /// \brief Busca el primer espacio libre en el array de empleados y devuelve su indice o -1 en caso de que no haya espacios libres
 /// \param list Puntero al array de empleados
 /// \param len Tamaño del array
-/// \return -1 si no encontro un espacio libre en el array o 0 si lo encontró
+/// \return Retorna -1 si no encontro un espacio libre en el array o 0 si lo encontró
 int BuscarPrimeraPosicionLibre(Employee list[], int len);
 
 /// \fn int HacerAlta(Employee[], int, int*)
@@ -59,16 +59,19 @@ int CrearEmpleado(Employee* employee, int id);
 /// espacio libre) - (0) si se pudo agregar el empleado a la lista
 int addEmployes(Employee list[], int len, int id, char name[], char lastName[], float salary, int sector);
 
-/// \fn void HacerModificacion(Employee[], int)
+/// \fn int HacerModificacion(Employee[], int)
 /// \brief Permite modificar un empleado. Se imprime la lista de empleados y se le pide al usuario que ingrese el ID del
 /// empleado a modificar, luego se da a elegir si quiere modificar el nombre, apellido, salario o sector del mismo.
 /// \param list Puntero al array de empleados.
 /// \param len Tamaño del array de empleados.
+/// \return Retorna 1 si pudo realizarse la modificación con éxito - (-1) si no se pudo encontrar al empleado en el array
+/// - (-2) si no existen empleados en el array - 0 si se ingresó mal un dato, o si hubo puntero nulo o tamaño inválido
 int HacerModificacion(Employee list[], int len);
 
 /// \fn int ModificarEmpleado(Employee[], int, int, int)
 /// \brief Modifica el campo enviado por parámetro, del empleado elegido previamente. Se le pide al usuario que ingrese
 /// el nuevo valor para el mismo.
+/// \param list Puntero al array de empleados
 /// \param len Tamaño del array
 /// \param indice El indice donde se encuentra el empleado a modificar
 /// \param opcion La opcion elegida que indica el campo a ser modificado
@@ -81,10 +84,13 @@ int ModificarEmpleado(Employee list[], int len, int indice, int opcion);
 /// \param employee El empleado a ser modificado
 void MostrarCamposEmpleadoParaModificar(Employee employee);
 
-/// \fn void HacerBaja(Employee[], int)
+/// \fn int HacerBaja(Employee[], int)
 /// \brief Permite dar de baja un empleado del array, imprimiendo los empleados para luego ingresar el ID del mismo.
 /// \param list Puntero al array de empleados.
 /// \param len Tamaño del array de empleados.
+/// \return Retorna 1 si se pudo realizar la baja con éxito - (-2) si no hay empleados en la lista - (-1) si no se pudo
+/// encontrar al empleado en la lista - 0 si se ingresó mal el ID del empleado a eliminar, hubo puntero nulo o tamaño
+/// inválido
 int HacerBaja(Employee list[], int len);
 
 /// \fn int RemoveEmployee(Employee[], int, int)
@@ -114,8 +120,8 @@ void MostrarEmpleado(Employee employee);
 /// \param list Puntero al array de empleados
 /// \param len Tamaño del array
 /// \param id El ID del empleado a buscar
-/// \return Retorna (-1) si hubo un error (Tamaño invalido o puntero nulo o no se encontro a un empleado con ese ID)
-/// - (0) si Ok
+/// \return Retorna el indice del empleado en el array - (-1) si hubo un error (Tamaño invalido o puntero nulo o no se
+/// encontro a un empleado con ese ID)
 int FindEmployeeById(Employee list[], int len, int id);
 
 /// \fn int ContarEmpleados(Employee[], int, int*)
@@ -123,14 +129,16 @@ int FindEmployeeById(Employee list[], int len, int id);
 /// \param list Puntero al array de empleados
 /// \param len Tamaño del array
 /// \param cantidadEmpleados Puntero a entero donde se almacena la cantidad de empleados
-/// \return Retorna la cantidad de empleados actuales - (-1) si hubo un error (puntero nulo o tamaño inválido)
+/// \return Retorna 1 si pudo contar a los empleados correctamente - (0) si hubo un error (puntero nulo o tamaño inválido)
 int ContarEmpleados(Employee list[], int len, int* cantidadEmpleados);
 
-/// \fn void OrdenarEmpleadosPorApellidoSector(Employee[], int)
+/// \fn int OrdenarEmpleadosPorApellidoSector(Employee[], int)
 /// \brief Le pregunta al usuario si desea ordenar el array de empleados de manera ascendente o descendente, para luego realizar el ordenamiento elegido e
 /// imprimir los resultados por pantalla, en caso de realizarse con exito.
 /// \param list Puntero al array de empleados.
 /// \param len Tamaño del array.
+/// \return Retorna 1 si pudo realizar el ordenamienito seleccionado con éxito - 0 si no pudo seleccionar el tipo de ordenamiento - (-1) por puntero nulo
+/// o tamaño inválido
 int OrdenarEmpleadosPorApellidoSector(Employee list[], int len);
 
 /// \fn int SortEmployees(Employee[], int, int)
@@ -169,6 +177,7 @@ int CalcularSalariosEmpleados(Employee list[], int len, float* salarioAcumulado,
 /// \brief Acumula el salario de todos los empleados activos de la nomina (bandera isEmpty en FULL)
 /// \param list Puntero al array de empleados
 /// \param len Tamaño del array
+/// \param salarioAcumulado Puntero a flotante que almacena el salario acumulado de los clientes
 /// \return Retorna 1 si pudo acumularse el salario correctamente - 0 si hubo un error (puntero nulo o tamaño invalido)
 int AcumularSalario(Employee list[], int len, float* salarioAcumulado);
 
