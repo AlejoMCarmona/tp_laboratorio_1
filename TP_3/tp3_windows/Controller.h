@@ -1,6 +1,5 @@
 #ifndef controller_H_INCLUDED
 #define controller_H_INCLUDED
-#include "LinkedList.h"
 #include "Employee.h"
 #include "parser.h"
 
@@ -8,14 +7,14 @@
 /// \brief Carga los datos de los empleados desde el archivo data.csv (modo texto).
 /// \param path Ruta hacia el archivo de texto
 /// \param pArrayListEmployee Puntero a la lista enlazada
-/// \return Retorna 0 si se pudieron cargar los empleados desde el archivo correctamente - 0 si hubo un error
+/// \return Retorna 0 si se pudieron cargar los empleados desde el archivo correctamente - (-1) si hubo un error
 int controller_loadFromText(char* path , LinkedList* pArrayListEmployee);
 
 /// \fn int controller_loadFromBinary(char*, LinkedList*)
 /// \brief Carga los datos de los empleados desde el archivo data.bin (modo binario).
 /// \param path Ruta hacia el archivo binario
 /// \param pArrayListEmployee Puntero a la lista enlazada
-/// \return Retorna 0 si se pudieron cargar los empleados desde el archivo correctamente - 0 si hubo un error
+/// \return Retorna 0 si se pudieron cargar los empleados desde el archivo correctamente - (-1) si hubo un error
 int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee);
 
 /// \fn int controller_addEmployee(LinkedList*)

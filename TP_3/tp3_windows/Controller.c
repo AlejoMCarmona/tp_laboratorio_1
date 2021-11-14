@@ -12,7 +12,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 	if (path != NULL && pArrayListEmployee != NULL) {
 		retorno = 0;
 		if (ll_isEmpty(pArrayListEmployee) == 0) {
-			retorno = PedirConfirmacionConIntentos(&confirmacion, "ALERTA: Ya hay una lista creada con empleados. ¿Desea sobreescribirla? ", "ERROR. ALERTA: Ya hay una lista creada con empleados. ¿Desea sobreescribirla? ", 5);
+			retorno = PedirConfirmacionConIntentos(&confirmacion, "ALERTA: Ya hay una lista creada con empleados. ¿Desea sobreescribirla?", "ERROR. ALERTA: Ya hay una lista creada con empleados. ¿Desea sobreescribirla?", 5);
 			if (retorno == 1 && confirmacion == 's') {
 				ll_clear(pArrayListEmployee);
 				retorno = 0;
@@ -49,7 +49,7 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 	if (path != NULL && pArrayListEmployee != NULL) {
 		retorno = 0;
 		if (ll_isEmpty(pArrayListEmployee) == 0) {
-			retorno = PedirConfirmacionConIntentos(&confirmacion, "ALERTA: Ya hay una lista creada con empleados. ¿Desea sobreescribirla? ", "ERROR. ALERTA: Ya hay una lista creada con empleados. ¿Desea sobreescribirla? ", 5);
+			retorno = PedirConfirmacionConIntentos(&confirmacion, "ALERTA: Ya hay una lista creada con empleados. ¿Desea sobreescribirla?", "ERROR. ALERTA: Ya hay una lista creada con empleados. ¿Desea sobreescribirla?", 5);
 			if (retorno == 1 && confirmacion == 's') {
 				ll_clear(pArrayListEmployee);
 				retorno = 0;
@@ -112,11 +112,14 @@ int controller_editEmployee(LinkedList* pArrayListEmployee)
 	retorno = -1;
 
 	if (pArrayListEmployee != NULL && ll_isEmpty(pArrayListEmployee) == 0) {
+		employee_listEmployees(pArrayListEmployee);
+		printf("------------------------------------\n");
 		retorno = IngresarEntero(&id, "Ingrese el ID del empleado a modificar: ");
 		if (retorno == 1) {
 			employee = employee_findEmployeeById(pArrayListEmployee, id);
 			if (employee != NULL) {
 				printf("----Empleado a modificar----\n");
+				printf("ID-Nombre-HorasTrabajadas-Sueldo\n");
 				employee_showEmployee(employee);
 				employeeAux = employee_copyEmployeeToEmployeeAux(employee);
 				if (employeeAux != NULL) {
@@ -153,6 +156,8 @@ int controller_removeEmployee(LinkedList* pArrayListEmployee)
 	retorno = -1;
 
 	if (pArrayListEmployee != NULL && ll_isEmpty(pArrayListEmployee) == 0) {
+		employee_listEmployees(pArrayListEmployee);
+		printf("------------------------------------\n");
 		retorno = IngresarEntero(&id, "Ingrese el ID del empleado a remover: ");
 		if (retorno == 1) {
 			employee = employee_findEmployeeById(pArrayListEmployee, id);

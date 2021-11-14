@@ -171,9 +171,9 @@ int employee_editEmployee(LinkedList* pArrayListEmployee, Employee* employee, Em
 		}
 
 		if (retorno == 1) {
-			retorno = PedirConfirmacionConIntentos(&confirmacion, "¿Seguro que desea realizar esta modificacion? ", "ERROR. ¿Seguro que desea realizar esta modificacion? ", 5);
+			retorno = PedirConfirmacionConIntentos(&confirmacion, "¿Seguro que desea realizar esta modificacion?", "ERROR. ¿Seguro que desea realizar esta modificacion?", 5);
 			if (retorno == 1 && confirmacion == 's') {
-				auxInt = ll_indexOf(pArrayListEmployee, employee); //innecesario validar esto
+				auxInt = ll_indexOf(pArrayListEmployee, employee);
 				retorno = ll_set(pArrayListEmployee, auxInt, employeeAux);
 			} else {
 				if (confirmacion == 'n') {
@@ -210,8 +210,9 @@ int employee_removeEmployee(LinkedList* pArrayListEmployee, Employee* employee, 
 
 	if (pArrayListEmployee != NULL && employee != NULL) {
 		printf("--Empleado a remover--\n");
+		printf("ID-Nombre-HorasTrabajadas-Sueldo\n");
 		employee_showEmployee(employee);
-		retorno = PedirConfirmacionConIntentos(&confirmacion, "¿Seguro que desea eliminar este empleado? ", "ERROR. ¿Seguro que desea eliminar este empleado? ", 5);
+		retorno = PedirConfirmacionConIntentos(&confirmacion, "¿Seguro que desea eliminar este empleado?", "ERROR. ¿Seguro que desea eliminar este empleado?", 5);
 		if (retorno == 1 && confirmacion == 's') {
 			retorno = ll_remove(pArrayListEmployee, index);
 		} else {
