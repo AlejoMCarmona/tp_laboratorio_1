@@ -29,6 +29,7 @@ int controller_loadFromText(char* path , LinkedList* pArrayListEmployee)
 					ll_clear(pArrayListEmployee);
 				}
 			} else {
+				retorno = -1;
 				printf("No se ha encontrado el archivo. ");
 			}
 		    fclose(pArchive);
@@ -66,6 +67,7 @@ int controller_loadFromBinary(char* path , LinkedList* pArrayListEmployee)
 					ll_clear(pArrayListEmployee);
 				}
 			} else {
+				retorno = -1;
 				printf("No se ha encontrado el archivo. ");
 			}
 		    fclose(pArchive);
